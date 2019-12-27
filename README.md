@@ -23,7 +23,7 @@ jobs:
 
       - uses: Djiit/action-renovate@master
         with:
-          args: $GITHUB_REPOSITORY
+          args: ${{ github.repository }}
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
 ```
