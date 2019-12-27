@@ -1,16 +1,14 @@
-name: renovate
-
-on:
-  - push
-
+name: Renovate
+on: push
 jobs:
-  run:
+  main:
+    name: Run Renovate
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-
-      - uses: ${{ github.repository }}@master
+      - name: Renovate
+        uses: djiit/action-renovate@master
         with:
           args: ${{ github.repository }}
         env:
