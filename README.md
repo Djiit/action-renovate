@@ -23,9 +23,13 @@ jobs:
 
       - uses: Djiit/action-renovate@master
         with:
-          args: ${{ github.repository }}
+          args: >
+            ${{ github.repository }}
+          # --more-args
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
 ```
+
+> You can find more args for renovate at https://gist.githubusercontent.com/aslafy-z/fbad0562450385334bf5904a6742b052
 
 > Note: Avoid using `master` ref, prefer to pin the last release's SHA ref.
