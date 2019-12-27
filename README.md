@@ -1,6 +1,6 @@
 # action-renovate
 
-Renovate as a Github Action
+Renovate as a GitHub Action
 
 ## Prerequisite
 
