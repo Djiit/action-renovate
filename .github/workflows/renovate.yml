@@ -10,8 +10,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - uses: $GITHUB_REPOSITORY@master
+      - uses: ${{ github.repository }}@master
         with:
-          args: $GITHUB_REPOSITORY
+          args: ${{ github.repository }}
         env:
           RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
