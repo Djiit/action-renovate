@@ -11,3 +11,7 @@ jobs:
         uses: actions/checkout@v2
 
       - uses: $GITHUB_REPOSITORY@master
+        with:
+          args: $GITHUB_REPOSITORY
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
