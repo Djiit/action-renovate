@@ -1,0 +1,17 @@
+name: renovate
+
+on:
+  - push
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: ${{ github.repository }}@master
+        with:
+          args: ${{ github.repository }}
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
