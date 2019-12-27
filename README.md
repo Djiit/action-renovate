@@ -2,6 +2,10 @@
 
 Renovate as a Github Action
 
+## Prerequisite
+
+- Create a GitHub Personnal Access Token with Repo access and save it in the Repo settings as `RENOVATE_TOKEN` secret 
+
 ## Usage
 
 ```
@@ -18,6 +22,10 @@ jobs:
         uses: actions/checkout@v2
 
       - uses: Djiit/action-renovate@master
+        with:
+          args: $GITHUB_REPOSITORY
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
 ```
 
 > Note: Avoid using `master` ref, prefer to pin the last release's SHA ref.
